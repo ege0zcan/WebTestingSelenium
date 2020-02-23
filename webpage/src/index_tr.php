@@ -70,13 +70,13 @@
 		<img src="bilkent.png" class = "logo">
 			<h1> Bilkent Universitesi <h1>
 			<h2> Guvenli Giris Kapisi <h2>
-				<form>
+				<form name="login_form" method="post" action="">
 					<p> Bilkent ID </p>
-					<input type = "text" name="" placeholder="Enter Bilkent ID" >
+					<input type = "text" name="bil_id" placeholder="Enter Bilkent ID" >
 					<label for="id">Personel Sicil No veya Ogrenci No</label>
 					<p> Password </p>
-					<input type = "password" name="" placeholder="Enter Password" >
-					<input type = "submit" name="" placeholder="Login" >
+					<input type = "password" name="pass" placeholder="Enter Password" >
+					<input type = "submit" name="submitCred" placeholder="Login" >
 					<a href= "resetpage_tr.html"> Sifre Sifirla? </a><br>
 				</form>
 	</div>
@@ -96,7 +96,7 @@
 	</div>
 	<div class = "infobox">
 		<h1> Bilkent Bilgisayar Merkezi kullanici kimlik dogrulamasi icin bu ortak giris sayfasini kullanmaktadir. Bilkent Universitesi'nin cogu cevrimici servisi icin bu kapi yoluyla erisim saglanmaktadir.  <h1>
-		<a href= "resetpage_tr.html"> STARS ya da BAIS sifrenizi unuttuysaniz burayi tiklayiniz. </a><br>	
+		<a href= "resetpage_tr.html"> STARS ya da BAIS sifrenizi unuttuysaniz burayi tiklayiniz. </a><br>
 	</div>
 </body>
 </head>

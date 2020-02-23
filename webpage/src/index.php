@@ -96,7 +96,7 @@
 	</div>
 	<div class = "infobox">
 		<h1> Bilkent Computer Center uses this common login gateway page for user authenticaton. Most Bilkent University online services are accessed through this Secure Login Gateway. <h1>
-		<a href= "resetpage.html"> If you have forgotten your STARS or BAIS password, please click here. </a><br>	
+		<a href= "resetpage.html"> If you have forgotten your STARS or BAIS password, please click here. </a><br>
 	</div>
 </body>
 </head>
