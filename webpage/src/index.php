@@ -28,7 +28,7 @@
 				
 				$_SESSION['user_name'] = $user;
 				$_SESSION['password'] = $pass;
-				header('Location: index_tr.html');
+				header('Location: main.php');
 			}
 			
 		}
@@ -83,7 +83,7 @@
 	<div class = "topbar">
 		<form>
 				<a href= "#" class = "onservices"> Bilkent University Online Services </a><br>
-				<a href= "index_tr.html" class = "lang"> Turkce </a><br>
+				<a href= "index_tr.php" class = "lang"> Turkce </a><br>
 				<a href= "#" class = "log"> Login </a><br>
 		</form>
 	</div>

@@ -1,7 +1,70 @@
+<?php
+	include "config.php";
+	
+	session_start();
+	
+	if(isset($_POST['submitCred'])){
+		
+		
+		$user = mysqli_real_escape_string($mysqli,$_POST['bil_id']);
+		$pass = mysqli_real_escape_string($mysqli,$_POST['pass']);
+		
+		
+		if ($user != "" && $pass != ""){
+			
+			$user=strtolower($user);
+			
+			$cred_query = "select uid, password from students where uid='".$user."' and password='".$pass."'";
+			
+			$result = mysqli_query($mysqli,$cred_query);
+			$flag = mysqli_fetch_row($result);
+			
+			
+			if($flag === null  ){
+				echo '<script language="javascript">';
+				echo 'alert("Boyle bir hesap yok.")';
+				echo '</script>';
+			}else{
+				
+				$_SESSION['user_name'] = $user;
+				$_SESSION['password'] = $pass;
+				header('Location: main.php');
+			}
+			
+		}
+		else
+		{
+			echo '<script language="javascript">';
+			echo 'alert("Please enter a username and a password")';
+			echo '</script>';
+		}
+		
+	}
+?>
+
+
 <html>
 <head>
 <title>Bilkent STARS Giris</title>
 	<link rel = "stylesheet" type = "text/css" href = "style.css">
+	<script type="text/javascript">
+	function checkCred()
+	{
+		var bil_id = document.forms["login_form"]["bil_id"].value;
+		var pass = document.forms["login_form"]["pass"].value;
+		if (bil_id==null || pass=="")
+		{
+			alert("ID bos olamaz");
+			return false;
+		}
+		else if (pass==null || bil_id=="")
+		{
+			alert("Sifre bos olamaz");
+			return false;
+		}
+		return true;
+	}
+	</script>
 <body>
 	<div class = "loginbox">
 		<img src="bilkent.png" class = "logo">
@@ -20,7 +83,7 @@
 	<div class = "topbar">
 		<form>
 				<a href= "#" class = "onservices"> Bilkent University Online Services </a><br>
-				<a href= "index.html" class = "lang"> English </a><br>
+				<a href= "index.php" class = "lang"> English </a><br>
 				<a href= "#" class = "log"> Giris </a><br>
 		</form>
 	</div>
