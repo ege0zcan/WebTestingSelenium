@@ -6,25 +6,24 @@
 	if(isset($_POST['submitCred'])){
 		
 		
-		$user = mysqli_real_escape_string($mysqli,$_POST['bil_id']);
-		$pass = mysqli_real_escape_string($mysqli,$_POST['pass']);
+		$user = mysqli_real_escape_string($mysqli, $_POST['bil_id']);
+		$pass = mysqli_real_escape_string($mysqli, $_POST['pass']);
 		
-		
-		if ($user != "" && $pass != ""){
+		if ($user != "" && $pass != "") {
 			
-			$user=strtolower($user);
+			$user = strtolower($user);
 			
-			$cred_query = "select uid, password from students where uid='".$user."' and password='".$pass."'";
+			$cred_query = "SELECT uid, password FROM students WHERE uid = '" . $user . "' and password = '" . $pass . "'";
 			
 			$result = mysqli_query($mysqli,$cred_query);
 			$flag = mysqli_fetch_row($result);
 			
 			
-			if($flag === null  ){
+			if($flag === null) {
 				echo '<script language="javascript">';
 				echo 'alert("No such user with the given password in the system")';
 				echo '</script>';
-			}else{
+			} else{
 				
 				$_SESSION['user_name'] = $user;
 				$_SESSION['password'] = $pass;

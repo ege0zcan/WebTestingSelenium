@@ -14,7 +14,7 @@
 			
 			$user=strtolower($user);
 			
-			$cred_query = "select uid, password from students where uid='".$user."' and password='".$pass."'";
+			$cred_query = "SELECT uid, password FROM students WHERE uid='".$user."' and password='".$pass."'";
 			
 			$result = mysqli_query($mysqli,$cred_query);
 			$flag = mysqli_fetch_row($result);
@@ -22,7 +22,7 @@
 			
 			if($flag === null  ){
 				echo '<script language="javascript">';
-				echo 'alert("Boyle bir hesap yok.")';
+				echo 'alert("Girdiğiniz bilgilerle eşleşen bir hesap bulunamadı.")';
 				echo '</script>';
 			}else{
 				
@@ -35,7 +35,7 @@
 		else
 		{
 			echo '<script language="javascript">';
-			echo 'alert("Please enter a username and a password")';
+			echo 'alert("Lütfen kullanıcı adı ve şifre bilgilerinizi giriniz.")';
 			echo '</script>';
 		}
 		
